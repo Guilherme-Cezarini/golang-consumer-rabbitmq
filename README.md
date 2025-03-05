@@ -1,12 +1,12 @@
 # Go RabbitMQ Consumer
 
-Este projeto é um consumer de mensagens do RabbitMQ escrito em Go. As mensagens recebidas são armazenadas em um banco de dados MongoDB. O serviço é executado como um processo independente e espera que o RabbitMQ já esteja rodando.
+Este projeto é um consumer de mensagens do RabbitMQ escrito em Go. As mensagens recebidas são armazenadas em um banco de dados MongoDB. 
 
 ## Requisitos
 
 - Go 1.20
 - Docker e Docker Compose
-- RabbitMQ rodando previamente
+- RabbitMQ
 
 ## Configuração
 
@@ -26,8 +26,7 @@ cp .env.example .env
    docker-compose up -d
    ```
 
-2. Certifique-se de que o RabbitMQ já está rodando.
-3. Execute a aplicação Go:
+2. Execute a aplicação Go:
 
    ```sh
    go run main.go
@@ -35,11 +34,7 @@ cp .env.example .env
 
 ## Considerações
 
-- A aplicação **não inicia o RabbitMQ**, ele deve estar rodando previamente.
-- O MongoDB é iniciado via Docker Compose.
+- O MongoDB e RabbitmQ é iniciado via Docker Compose.
 - Utilize o `.env` para definir as credenciais e conexões necessárias.
 
-## Licença
-
-Este projeto é distribuído sob a licença MIT.
 
